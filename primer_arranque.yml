@@ -2,40 +2,89 @@
 - name: Correr la configuración básica tras una instalación de sistema operativo
   hosts: all
   become: true
+  vars_files:
+    - passwords.yml
 
   tasks:
-
-    - name: Asegurar que el grupo ansible existe
-      ansible.builtin.group:
-        name: ansible
-        state: present
-
-    - name: Añadir usuario ansible
-      ansible.builtin.user:
-        name: ansible
-        group: ansible
-        password: $y$j9T$svx043wVVmCMjSkL.jzsQ1$Dv9ATMvEuglaD5.T1LqFLdN3qd/0YRSag8198e2HJF8 
-
-
     - name: Asegurar que el grupo practicas existe con id 1001 
       ansible.builtin.group:
         name: practicas
         state: present
         gid: 1001
 
-
     - name: Añadir usuario practicas
       ansible.builtin.user:
         name: practicas
         uid: 1001
         group: practicas
-        password: $y$j9T$svx043wVVmCMjSkL.jzsQ1$Dv9ATMvEuglaD5.T1LqFLdN3qd/0YRSag8198e2HJF8 
+        update_password: on_create
+        password: "{{ansible_practicas_password | password_hash('sha512')}}"
+
+    - name: Asegurar que el grupo ansible existe
+      ansible.builtin.group:
+        name: ansible
+        system: true
+        state: present
+        
+        
+
+    - name: Añadir usuario ansible
+      ansible.builtin.user:
+        name: ansible
+        group: ansible
+        system: true
+        update_password: on_create
+        password: "{{ansible_ansible_user_password | password_hash('sha512')}}"
+        state: present
+        
+        
 
     - name: sudoers | Create sudoers.d files
       copy:
-        src: sudoer_*
-        dest: /etc/sudoers.d
+        content: 'ansible ALL=(ALL) NOPASSWD: ALL'
+        dest: /etc/sudoers.d/sudoer_ansible
         owner: root
         group: root
-        mode: ug+rwX,o=
+        mode: "0440" # Set proper permissions
         force: yes
+        validate: /usr/sbin/visudo -csf %s
+
+    - name: Fully upgrade the Ubuntu system
+      apt:
+        upgrade: full
+        update_cache: yes
+        
+    - name: Add SSH public key to authorized_keys for the ansible user
+      lineinfile:
+        path: /home/ansible/.ssh/authorized_keys
+        line: "{{ ansible_ssh_public_key }}"
+        create: yes
+        owner: ansible
+        group: ansible
+        mode: "0600"
+
+    - name: Add SSH public key to authorized_keys for the practicas user
+      lineinfile:
+        path: /home/practicas/.ssh/authorized_keys
+        line: "{{ ansible_ssh_public_key }}"
+        create: yes
+        owner: practicas
+        group: practicas
+        mode: "0600"
+
+    - name: Install some packages
+      apt:
+        name: 
+          - ansible
+          - git
+          - openssh-server
+        state: present
+
+
+    - name: Schedule Ansible pull from GitHub every hour
+      become: true
+      cron:
+        name: "Ansible Pull"
+        minute: "0"
+        hour: "*"
+        job: "/usr/bin/ansible-pull -o -U https://github.com/mcasl/ansible_dimia.git local.yml"
