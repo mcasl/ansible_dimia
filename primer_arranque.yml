@@ -1,0 +1,41 @@
+---
+- name: Correr la configuración básica tras una instalación de sistema operativo
+  hosts: all
+  become: true
+
+  tasks:
+
+    - name: Asegurar que el grupo ansible existe
+      ansible.builtin.group:
+        name: ansible
+        state: present
+
+    - name: Añadir usuario ansible
+      ansible.builtin.user:
+        name: ansible
+        group: ansible
+        password: $y$j9T$svx043wVVmCMjSkL.jzsQ1$Dv9ATMvEuglaD5.T1LqFLdN3qd/0YRSag8198e2HJF8 
+
+
+    - name: Asegurar que el grupo practicas existe con id 1001 
+      ansible.builtin.group:
+        name: practicas
+        state: present
+        gid: 1001
+
+
+    - name: Añadir usuario practicas
+      ansible.builtin.user:
+        name: practicas
+        uid: 1001
+        group: practicas
+        password: $y$j9T$svx043wVVmCMjSkL.jzsQ1$Dv9ATMvEuglaD5.T1LqFLdN3qd/0YRSag8198e2HJF8 
+
+    - name: sudoers | Create sudoers.d files
+      copy:
+        src: sudoer_*
+        dest: /etc/sudoers.d
+        owner: root
+        group: root
+        mode: ug+rwX,o=
+        force: yes

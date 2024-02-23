@@ -1,0 +1,22 @@
+- name: Instalar Anaconda en /opt/anaconda3
+  hosts: all
+  become: true
+  tasks:
+    - name: Descargar Anaconda y comprobar checksum
+      ansible.builtin.get_url:
+        url: https://repo.anaconda.com/archive/Anaconda3-2023.09-0-Linux-x86_64.sh
+        dest: /root/anaconda3.sh
+        checksum: sha256:6c8a4abb36fbb711dc055b7049a23bbfd61d356de9468b41c5140f8a11abd851
+
+    - name: Ejecutar el instalador de Anaconda.sh
+      shell: bash /root/anaconda3.sh -b -p /opt/anaconda3
+
+    - name: Actualizar el path del usuario practicas
+      become_user: practicas
+      shell:
+        cmd: |
+          source /opt/anaconda3/bin/activate
+          conda init
+          source ~/.bashrc
+          conda config --set auto_activate_base True
+
