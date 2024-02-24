@@ -3,5 +3,6 @@
   become: true
 
   tasks:
-  - name: Run instalar_anaconda.yml playbook
-    include_tasks: instalar_anaconda.yml
+  - name: instalar htop
+    apt:
+      name: htop
