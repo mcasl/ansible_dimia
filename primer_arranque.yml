@@ -19,36 +19,7 @@
         group: practicas
         update_password: on_create
         password: "{{ansible_practicas_password | password_hash('sha512')}}"
-
-    - name: Asegurar que el grupo ansible existe
-      ansible.builtin.group:
-        name: ansible
-        system: true
-        state: present
         
-        
-
-    - name: Añadir usuario ansible
-      ansible.builtin.user:
-        name: ansible
-        group: ansible
-        system: true
-        update_password: on_create
-        password: "{{ansible_ansible_user_password | password_hash('sha512')}}"
-        state: present
-        
-        
-
-    - name: sudoers | Create sudoers.d files
-      copy:
-        content: 'ansible ALL=(ALL) NOPASSWD: ALL'
-        dest: /etc/sudoers.d/sudoer_ansible
-        owner: root
-        group: root
-        mode: "0440" # Set proper permissions
-        force: yes
-        validate: /usr/sbin/visudo -csf %s
-
     - name: Fully upgrade the Ubuntu system
       apt:
         upgrade: full
@@ -80,11 +51,3 @@
           - openssh-server
         state: present
 
-
-    - name: Schedule Ansible pull from GitHub every hour
-      become: true
-      cron:
-        name: "Ansible Pull"
-        minute: "0"
-        hour: "*"
-        job: "/usr/bin/ansible-pull -o -U https://github.com/mcasl/ansible_dimia.git local.yml"
