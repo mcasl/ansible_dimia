@@ -1,12 +1,3 @@
-all:
-  hosts:
-    computer1:
-      ansible_host: 10.30.48.114
-    computer2:
-      ansible_host: 10.30.48.125
-    computer3:
-      ansible_host: 10.30.48.122
-
 virtual:
   hosts:
     vbox:
