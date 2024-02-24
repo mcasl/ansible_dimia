@@ -28,8 +28,6 @@
       fi
       unset __conda_setup
       # <<< conda initialize <<<
-    append_newline: true
-    prepend_newline: true
     marker: "# <!-- {mark} ANSIBLE MANAGED BLOCK -->"
     state: present
 
