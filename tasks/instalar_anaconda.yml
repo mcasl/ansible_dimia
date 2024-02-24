@@ -1,38 +1,37 @@
-- name: Instalar Anaconda en /opt/anaconda3
-  tasks:
-    - name: Descargar Anaconda y comprobar checksum
-      ansible.builtin.get_url:
-        url: https://repo.anaconda.com/archive/Anaconda3-2023.09-0-Linux-x86_64.sh
-        dest: /root/anaconda3.sh
-        checksum: sha256:6c8a4abb36fbb711dc055b7049a23bbfd61d356de9468b41c5140f8a11abd851
 
-    - name: Ejecutar el instalador de Anaconda.sh
-      shell:
-        cmd: bash /root/anaconda3.sh -b -p /opt/anaconda3
-        creates: /opt/anaconda3
+- name: Descargar Anaconda y comprobar checksum
+  ansible.builtin.get_url:
+    url: https://repo.anaconda.com/archive/Anaconda3-2023.09-0-Linux-x86_64.sh
+    dest: /root/anaconda3.sh
+    checksum: sha256:6c8a4abb36fbb711dc055b7049a23bbfd61d356de9468b41c5140f8a11abd851
 
-    - name: Actualizar el path del usuario practicas
-      ansible.builtin.blockinfile:
-        path: /home/practicas/.bashrc
-        block: |
-          # >>> conda initialize >>>
-          # !! Contents within this block are managed by 'conda init' !!
-          __conda_setup="$('/opt/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-          if [ $? -eq 0 ]; then
-              eval "$__conda_setup"
+- name: Ejecutar el instalador de Anaconda.sh
+  shell:
+    cmd: bash /root/anaconda3.sh -b -p /opt/anaconda3
+    creates: /opt/anaconda3
+
+- name: Actualizar el path del usuario practicas
+  ansible.builtin.blockinfile:
+    path: /home/practicas/.bashrc
+    block: |
+      # >>> conda initialize >>>
+      # !! Contents within this block are managed by 'conda init' !!
+      __conda_setup="$('/opt/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+      if [ $? -eq 0 ]; then
+          eval "$__conda_setup"
+      else
+          if [ -f "/opt/anaconda3/etc/profile.d/conda.sh" ]; then
+              . "/opt/anaconda3/etc/profile.d/conda.sh"
           else
-              if [ -f "/opt/anaconda3/etc/profile.d/conda.sh" ]; then
-                  . "/opt/anaconda3/etc/profile.d/conda.sh"
-              else
-                  export PATH="/opt/anaconda3/bin:$PATH"
-              fi
+              export PATH="/opt/anaconda3/bin:$PATH"
           fi
-          unset __conda_setup
-          # <<< conda initialize <<<
-        append_newline: true
-        prepend_newline: true
-        marker: "# <!-- {mark} ANSIBLE MANAGED BLOCK -->"
-        state: present
+      fi
+      unset __conda_setup
+      # <<< conda initialize <<<
+    append_newline: true
+    prepend_newline: true
+    marker: "# <!-- {mark} ANSIBLE MANAGED BLOCK -->"
+    state: present
 
-     
+  
 

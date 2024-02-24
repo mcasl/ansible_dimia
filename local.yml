@@ -11,5 +11,5 @@
   tasks:
     - include: tasks/packages.yml
     - include: tasks/instalar_anaconda.yml
-    
+
 
