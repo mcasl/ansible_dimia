@@ -3,7 +3,7 @@
   become: true
 
   pre_tasks:
-    - name: update repositories
+    - name: Actualizar los repositorios de apt
       apt:
         update_cache: yes
       changed_when: false
