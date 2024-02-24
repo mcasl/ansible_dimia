@@ -1,7 +1,4 @@
 - name: Instalar Anaconda en /opt/anaconda3
-  hosts: all
-  become: true
-
   tasks:
     - name: Descargar Anaconda y comprobar checksum
       ansible.builtin.get_url:
