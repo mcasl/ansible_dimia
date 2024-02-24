@@ -1,6 +1,6 @@
 ---
 - name: Run primer_arranque.yml playbook
-  hosts: localhost
+  hosts: vbox 
   tasks:
     - name: Run primer_arranque.yml playbook
       include_tasks: primer_arranque.yml
