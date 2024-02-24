@@ -1,8 +1,6 @@
 - name: Instalar Anaconda en /opt/anaconda3
   hosts: all
   become: true
-  vars_files:
-    - passwords.yml
 
   tasks:
     - name: Descargar Anaconda y comprobar checksum
