@@ -1,0 +1,10 @@
+# We do not want to do a port scan, only get the list of hosts dynamically
+---
+plugin: nmap
+address: 192.168.1.0/24
+strict: False
+ipv4: yes
+ports: no
+groups:
+  appliance: "'Amazon' in hostname"
+  regular: "'host' in hostname"
