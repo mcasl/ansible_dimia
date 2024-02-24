@@ -1,7 +1,7 @@
-hosts: localhost
-connection: local
-become: true
+- hosts: localhost
+  connection: local
+  become: true
 
-tasks:
-- name: Run instalar_anaconda.yml playbook
-  include_tasks: instalar_anaconda.yml
+  tasks:
+  - name: Run instalar_anaconda.yml playbook
+    include_tasks: instalar_anaconda.yml
