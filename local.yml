@@ -1,0 +1,12 @@
+---
+- name: Run primer_arranque.yml playbook
+  hosts: localhost
+  tasks:
+    - name: Run primer_arranque.yml playbook
+      include_tasks: primer_arranque.yml
+
+- name: Run instalar_anaconda.yml playbook
+  hosts: localhost
+  tasks:
+    - name: Run instalar_anaconda.yml playbook
+      include_tasks: instalar_anaconda.yml
