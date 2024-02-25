@@ -1,4 +1,4 @@
-- name: Comprobar si cargo está instalado 
+- name: Comprobar si cargo está instalado para el usuario root
   become: true
   shell: command -v cargo
   register: cargo_exists
@@ -14,7 +14,7 @@
   tags:
     - rust
 
-- name: Instalar rust/cargo para el usuario practicas
+- name: Instalar rust/cargo para el usuario root
   when: cargo_exists is failed
   become: true
   shell: /tmp/sh.rustup.rs -y
