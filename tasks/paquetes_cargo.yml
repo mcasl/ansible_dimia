@@ -1,6 +1,8 @@
 - name: Instalar lsd para todos
   community.general.cargo:
-    name: lsd
+    name: 
+      - lsd
+      - bpytop
     path: /usr/local
     state: latest
     executable: /root/.cargo/bin/cargo
