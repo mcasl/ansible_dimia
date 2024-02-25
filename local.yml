@@ -11,7 +11,9 @@
   tasks:
     - include: tasks/paquetes.yml
     - include: tasks/anaconda.yml
-    - include: tasks/rustup.yml
+    - include: tasks/practicas_rustup.yml
+    - include: tasks/root_rustup.yml
+    - include: tasks/administrador_rustup.yml
     
 
 
