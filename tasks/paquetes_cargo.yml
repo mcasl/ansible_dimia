@@ -3,6 +3,18 @@
     name: 
       - lsd
       - bat
+      - exa 
+      - fd
+      - procs
+      - dust
+      - ripgrep
+      - ytop
+      - tealdeer
+      - zoxide
+      - delta
+      - rnr
+      - mdcat
+      
     path: /usr/local
     state: latest
     executable: /root/.cargo/bin/cargo

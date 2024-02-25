@@ -3,6 +3,7 @@
   shell: command -v cargo
   register: cargo_exists
   ignore_errors: yes
+  failed_when: false
 
 - name: Descargar rust
   when: cargo_exists is failed
