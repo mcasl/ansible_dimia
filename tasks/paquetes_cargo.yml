@@ -2,7 +2,7 @@
   community.general.cargo:
     name: 
       - lsd
-      - bpytop
+      - bat
     path: /usr/local
     state: latest
     executable: /root/.cargo/bin/cargo
