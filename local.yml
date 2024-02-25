@@ -9,9 +9,9 @@
       changed_when: false
 
   tasks:
-    - include: tasks/usuarios.yml
-    - include: tasks/packages.yml
-    - include: tasks/instalar_anaconda.yml
+    - include: tasks/paquetes.yml
+    - include: tasks/anaconda.yml
+    - include: tasks/rustup.yml
     
 
 

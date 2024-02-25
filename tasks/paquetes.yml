@@ -1,6 +1,7 @@
 - name: Instalar paquetes varios
-  apt:
+  package:
     name:
+      - curl
       - htop
       - mc
       - tmux
