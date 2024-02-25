@@ -3,3 +3,4 @@
     name: lsd
     path: /usr/local
     state: latest
+    executable: /root/.cargo/bin/cargo
