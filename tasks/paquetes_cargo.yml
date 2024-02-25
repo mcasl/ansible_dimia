@@ -1,0 +1,5 @@
+- name: Instalar lsd para todos
+  community.general.cargo:
+    name: lsd
+    path: /usr/local
+    state: latest

@@ -14,6 +14,8 @@
     - include: tasks/practicas_rustup.yml
     - include: tasks/root_rustup.yml
     - include: tasks/administrador_rustup.yml
+    - include: tasks/paquetes_cargo.yml
+
     
 
 
