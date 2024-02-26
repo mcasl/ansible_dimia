@@ -9,6 +9,7 @@
       changed_when: false
 
   tasks:
+    - include: tasks/cron_job_ansible_pull.yml
     - include: tasks/paquetes.yml
     - include: tasks/anaconda.yml
     - include: tasks/practicas_rustup.yml
