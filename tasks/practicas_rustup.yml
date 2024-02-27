@@ -26,5 +26,5 @@
     path: /home/practicas/.bashrc
     line: "[ -f ~/.cargo/env ] && source $HOME/.cargo/env"
     create: yes
-    owner: root
-    group: root
+    owner: practicas
+    group: practicas
