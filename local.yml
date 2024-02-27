@@ -16,7 +16,8 @@
     - include: tasks/root_rustup.yml
     - include: tasks/administrador_rustup.yml
     - include: tasks/paquetes_cargo.yml
-
+    - include: tasks/email_final.yml
+    
     
 
 
