@@ -22,3 +22,11 @@
   shell: /tmp/sh.rustup.rs -y
   tags:
     - rust
+
+- name: Add cargo in .bashrc for the administrador user
+  lineinfile:
+    path: /home/administrador/.bashrc
+    line: "[ -f ~/.cargo/env ] && source $HOME/.cargo/env"
+    create: yes
+    owner: administrador
+    group: administrador
