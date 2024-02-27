@@ -30,3 +30,8 @@
     create: yes
     owner: administrador
     group: administrador
+
+- name: Instalar community.general porque es necesario para ejecutar tareas de cargo como la instalación de paquetes
+  when: cargo_exists is failed
+  shell: 
+    cmd: ansible-galaxy collection install community.general
