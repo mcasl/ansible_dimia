@@ -20,3 +20,11 @@
   shell: /tmp/sh.rustup.rs -y
   tags:
     - rust
+
+- name: Add cargo in .bashrc for the practicas user
+  lineinfile:
+    path: /home/practicas/.bashrc
+    line: "[ -f ~/.cargo/env ] && source $HOME/.cargo/env"
+    create: yes
+    owner: root
+    group: root
