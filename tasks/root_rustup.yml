@@ -20,3 +20,13 @@
   shell: /tmp/sh.rustup.rs -y
   tags:
     - rust
+
+- name: Add cargo in .bashrc for the root user
+  lineinfile:
+    path: /root/.bashrc
+    line: "[ -f ~/.cargo/env ] && source $HOME/.cargo/env"
+    create: yes
+    owner: root
+    group: root
+    
+
