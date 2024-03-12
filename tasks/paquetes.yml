@@ -5,3 +5,5 @@
       - htop
       - mc
       - tmux
+      - wireguard
+      
