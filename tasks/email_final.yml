@@ -1,7 +1,3 @@
-- name: Run ansible-pull and capture the output
-  command: ansible-pull -U <URL_of_your_playbook_repository>
-  register: ansible_pull_output
-
 - name: Send email with ansible-pull report
   mail:
     to: mcasl@unileon.es
