@@ -2,6 +2,8 @@
   package:
     name:
       - make
+      - pkg-config
+      - libssl-dev
       - curl
       - htop
       - mc
