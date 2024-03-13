@@ -6,12 +6,10 @@
       - exa 
       - fd-find
       - procs
-      - dust
       - ripgrep
       - ytop
       - tealdeer
       - zoxide
-      - delta
       - rnr
       - mdcat
       
