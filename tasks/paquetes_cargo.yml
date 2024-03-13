@@ -4,7 +4,7 @@
       - lsd
       - bat
       - exa 
-      - find-fd
+      - fd-find
       - procs
       - dust
       - ripgrep
