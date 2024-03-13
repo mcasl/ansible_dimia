@@ -1,4 +1,4 @@
-- name: Send email with ansible-pull report
+- name: Enviar email con resultados de ansible-pull
   mail:
     to: mcasl@unileon.es
     subject: "ansible-pull Report"
