@@ -1,6 +1,7 @@
 - name: Instalar paquetes varios
   package:
     name:
+      - make
       - curl
       - htop
       - mc
