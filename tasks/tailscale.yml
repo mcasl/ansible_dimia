@@ -3,6 +3,11 @@
   register: tailscale_exists
   ignore_errors: yes
 
+- name: Asegura que el directorio installation_files existe
+  file: 
+    path: "~/installation_files"
+    state: directory
+    
 - name: Descargar tailscale
   when: tailscale_exists is failed
   ansible.builtin.get_url:
