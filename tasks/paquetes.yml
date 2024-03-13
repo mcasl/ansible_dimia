@@ -9,4 +9,6 @@
       - mc
       - tmux
       - wireguard
+      - wakeonlan
+      
       
