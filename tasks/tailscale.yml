@@ -13,7 +13,7 @@
   ansible.builtin.get_url:
     url: https://tailscale.com/install.sh
     dest: ~/installation_files/anaconda3.sh
-    checksum: d095eaf89b3a9455d0af30f5aef255825ee44beadffff25d195d4a6701033391
+    checksum: sha256:d095eaf89b3a9455d0af30f5aef255825ee44beadffff25d195d4a6701033391
 
 - name: Ejecutar el instalador de tailscale
   when: tailscale_exists is failed
