@@ -1,11 +1,17 @@
+- name: Comprobar si tailscale está instalado 
+  shell: command -v tailscale
+  register: tailscale_exists
+  ignore_errors: yes
 
 - name: Descargar tailscale
+  when: tailscale_exists is failed
   ansible.builtin.get_url:
     url: https://tailscale.com/install.sh
     dest: ~/installation_files/anaconda3.sh
     checksum: d095eaf89b3a9455d0af30f5aef255825ee44beadffff25d195d4a6701033391
 
 - name: Ejecutar el instalador de tailscale
+  when: tailscalde_exists is failed
   shell:
     cmd: bash ~/installation_files/anaconda3.sh
     creates: /usr/bin/tailscale
