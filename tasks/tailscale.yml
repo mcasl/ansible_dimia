@@ -11,7 +11,7 @@
     checksum: d095eaf89b3a9455d0af30f5aef255825ee44beadffff25d195d4a6701033391
 
 - name: Ejecutar el instalador de tailscale
-  when: tailscalde_exists is failed
+  when: tailscale_exists is failed
   shell:
     cmd: bash ~/installation_files/anaconda3.sh
     creates: /usr/bin/tailscale
