@@ -4,6 +4,8 @@
   become: true
   vars_files:
     - passwords.yml
+  vars:
+    ansible_user: administrador
 
   tasks:
     - name: Asegurar que el grupo practicas existe con id 1001 
