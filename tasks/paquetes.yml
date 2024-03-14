@@ -10,5 +10,6 @@
       - tmux
       - wireguard
       - wakeonlan
+      - virtualbox
       
       
