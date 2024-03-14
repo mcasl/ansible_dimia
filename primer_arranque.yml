@@ -77,5 +77,4 @@
         state: present
 
     - name: Instalar community.general para tener acceso al módulo de cargo en ansible
-      shell:
-        name: ansible-galaxy collection install community.general
+      shell: ansible-galaxy collection install community.general
