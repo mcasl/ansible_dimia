@@ -2,6 +2,7 @@
   package:
     name:
       - make
+      - sshpass
       - pkg-config
       - libssl-dev
       - curl
