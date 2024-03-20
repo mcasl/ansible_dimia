@@ -1,0 +1,6 @@
+- hosts: all
+  tasks:
+    - name: Fully upgrade the Ubuntu system
+      apt:
+        upgrade: full
+        update_cache: yes
