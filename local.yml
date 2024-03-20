@@ -9,7 +9,7 @@
       changed_when: false
 
   vars_files:
-    - password.yml
+    - passwords.yml
     
   tasks:
     - include_tasks: tasks/factos.yml
