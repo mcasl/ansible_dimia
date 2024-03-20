@@ -1,0 +1,16 @@
+for ip in 10.30.48.{0..255}
+do
+        sshpass -f ~/passwd_f5.txt ssh-copy-id administrador@${ip}
+done
+
+ansible all -a 'crontab -u ansible -l | { cat; echo "0 * * * * /usr/bin/ansible-pull -o -U https://github.com/mcasl/ansible_dimia.git local.yml"; } | crontab -u Ansible -'
+
+
+for ip in 10.30.48.{0..255}
+do
+        ssh ansible@${ip} 'crontab -u ansible -l | { cat; echo "0 * * * * /usr/bin/ansible-pull -o -U https://github.com/mcasl/ansible_dimia.git local.yml"; } | crontab -u ansible -'
+
+done
+
+
+parallel -j 0 -N 60 --no-notice -S 10.30.48.{0..255} 'ssh ansible@{} "crontab -u ansible -l | { cat; echo \"0 * * * * /usr/bin/ansible-pull -o -U https://github.com/mcasl/ansible_dimia.git local.yml\"; } | crontab -u ansible -"'

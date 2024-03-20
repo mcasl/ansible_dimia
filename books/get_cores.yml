@@ -1,0 +1,6 @@
+- hosts: all
+  tasks:
+    - name: Display number of CPU cores
+      ansible.builtin.debug:
+        msg: "The number of CPU cores is {{ ansible_processor_cores }}"
+

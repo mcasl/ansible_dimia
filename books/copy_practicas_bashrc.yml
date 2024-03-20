@@ -1,0 +1,11 @@
+---
+- name: Create .bashrc for user practicas
+  hosts: all
+  become: yes
+  become_user: practicas
+  tasks:
+    - name: Copy .bashrc template
+      ansible.builtin.template:
+        src: files/bashrc.j2  # Path to the template file
+        dest: "/home/practicas/.bashrc"  # Destination path for the generated .bashrc file
+

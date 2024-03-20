@@ -1,0 +1,23 @@
+---
+- name: Check if VirtualBox and Anaconda are installed
+  hosts: all
+  tasks:
+    - name: Check if VirtualBox executable exists
+      ansible.builtin.command:
+        cmd: "which VirtualBox"  # Command to check if VirtualBox executable exists
+      register: virtualbox_check  # Register the command output for later use
+      ignore_errors: yes  # Ignore errors if VirtualBox is not installed
+
+    - name: Check if Anaconda executable exists
+      ansible.builtin.shell:
+        cmd: "sudo -u practicas which conda"  # Command to check if Anaconda executable exists as user 'practicas'
+      register: anaconda_check  # Register the command output for later use
+      ignore_errors: yes  # Ignore errors if Anaconda is not installed
+
+    - name: Fail if VirtualBox or Anaconda is not installed
+      ansible.builtin.fail:
+        msg: |
+          VirtualBox or Anaconda is not installed.
+          Please install the required software before continuing.
+      when: virtualbox_check.rc != 0 or anaconda_check.rc != 0  # Fail if either VirtualBox or Anaconda is not installed
+

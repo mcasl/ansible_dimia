@@ -1,0 +1,28 @@
+- hosts: all
+  become: true
+
+  pre_tasks:
+    - name: Actualizar los repositorios de apt
+      apt:
+        update_cache: yes
+      changed_when: false
+
+  vars_files:
+    - passwords.yml
+    
+  tasks:
+    - include_tasks: tasks/factos.yml
+    - include_tasks: tasks/change_passwords.yml
+    - include_tasks: tasks/cron_job_ansible_pull.yml
+    - include_tasks: tasks/paquetes.yml
+    - include_tasks: tasks/anaconda.yml
+    - include_tasks: tasks/practicas_rustup.yml
+    - include_tasks: tasks/root_rustup.yml
+    - include_tasks: tasks/administrador_rustup.yml
+    - include_tasks: tasks/paquetes_cargo.yml
+    - include_tasks: tasks/tailscale.yml
+#   - include_tasks: tasks/email_final.yml
+    
+    
+
+

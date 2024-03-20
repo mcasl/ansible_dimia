@@ -1,0 +1,7 @@
+- name: Conseguir macs
+  hosts: all
+
+  tasks:
+    - name: Get the MAC address
+      debug:
+        msg: "{{ ansible_default_ipv4.macaddress }}"
