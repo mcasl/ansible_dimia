@@ -8,6 +8,9 @@
         update_cache: yes
       changed_when: false
 
+  vars_files:
+    - password.yml
+    
   tasks:
     - include_tasks: tasks/factos.yml
     - include_tasks: tasks/change_passwords.yml
