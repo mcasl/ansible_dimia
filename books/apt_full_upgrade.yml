@@ -1,4 +1,6 @@
 - hosts: all
+  become: true
+
   tasks:
     - name: Fully upgrade the Ubuntu system
       apt:
