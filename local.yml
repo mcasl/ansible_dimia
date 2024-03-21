@@ -8,12 +8,12 @@
         update_cache: yes
         upgrade: full
 
-  vars_files:
-    - passwords.yml
+  #vars_files:
+  #  - passwords.yml
     
   tasks:
     - include_tasks: tasks/factos.yml
-    - include_tasks: tasks/change_passwords.yml
+    #    - include_tasks: tasks/change_passwords.yml
     - include_tasks: tasks/cron_job_ansible_pull.yml
     - include_tasks: tasks/paquetes.yml
     - include_tasks: tasks/anaconda.yml
