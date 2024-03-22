@@ -19,7 +19,6 @@
     - include_tasks: tasks/anaconda.yml
     - include_tasks: tasks/practicas_rustup.yml
     - include_tasks: tasks/root_rustup.yml
-    - include_tasks: tasks/administrador_rustup.yml
     - include_tasks: tasks/paquetes_cargo.yml
     - include_tasks: tasks/tailscale.yml
 #   - include_tasks: tasks/email_final.yml
