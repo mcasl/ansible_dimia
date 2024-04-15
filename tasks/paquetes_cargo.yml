@@ -12,6 +12,7 @@
       - zoxide
       - rnr
       - mdcat
+      - zellij
       
     path: /usr/local
     state: latest
