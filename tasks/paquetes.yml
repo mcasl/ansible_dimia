@@ -3,7 +3,7 @@
     repo: ppa:ansible/ansible
     
 - name: Instalar paquetes varios
-  package:
+  apt:
     upgrade: full
     update_cache: yes
     name:
