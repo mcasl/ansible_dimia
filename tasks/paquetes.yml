@@ -4,6 +4,8 @@
     
 - name: Instalar paquetes varios
   package:
+    upgrade: full
+    update_cache: yes
     name:
       - make
       - sshpass
