@@ -21,3 +21,4 @@
       - nmap
       - ghex
       - outguess
+      - ansible
