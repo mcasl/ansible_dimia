@@ -13,4 +13,7 @@
       - wakeonlan
       - virtualbox
       - parallel
-      
+      - net-tools
+      - nmap
+      - ghex
+      - outguess
