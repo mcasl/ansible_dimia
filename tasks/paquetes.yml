@@ -3,9 +3,9 @@
     repo: ppa:ansible/ansible
     
 - name: Instalar paquetes varios
-  apt:
-    upgrade: full
+  package:
     update_cache: yes
+    state: latest
     name:
       - make
       - sshpass
