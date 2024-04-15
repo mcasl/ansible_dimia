@@ -1,3 +1,7 @@
+- name: Add ansible ppa repository
+  ansible.builtin.apt_repository:
+    repo: ppa:ansible/ansible
+    
 - name: Instalar paquetes varios
   package:
     name:
