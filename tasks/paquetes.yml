@@ -1,6 +1,10 @@
 - name: Add ansible ppa repository
   ansible.builtin.apt_repository:
     repo: ppa:ansible/ansible
+
+- name: Ejecutar apt --fix-broken como precaución
+  package:
+    state: fixed
     
 - name: Instalar paquetes varios
   package:
