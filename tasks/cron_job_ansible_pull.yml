@@ -4,6 +4,7 @@
     user: ansible
     name: "Ansible Pull"
     special_time: reboot
+    cron_file: ansible_pull_at_reboot
     job: "/usr/bin/ansible-pull -U https://github.com/mcasl/ansible_dimia.git local.yml"
     
 - name: Añadir cron job para ansible-pull cada hora en punto (si el repo ha cambiado)
