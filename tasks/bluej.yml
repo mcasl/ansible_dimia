@@ -1,0 +1,3 @@
+- name: Descargar Bluej y comprobar checksum
+  apt:
+    deb: https://www.bluej.org/download/files/BlueJ-linux-x64-541.deb
