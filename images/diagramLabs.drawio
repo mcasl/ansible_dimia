@@ -181,6 +181,15 @@
             <mxPoint x="350" y="370" as="targetPoint" />
           </mxGeometry>
         </mxCell>
+        <mxCell id="gzPxU7n1VM5Tg1i428SV-41" value="&amp;nbsp; &amp;gt; books&lt;div&gt;&amp;nbsp; &amp;gt; files&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;gt; scripts&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;gt; tasks&lt;/div&gt;&lt;div&gt;&amp;nbsp; hosts&lt;/div&gt;" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="330" y="190" width="110" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="gzPxU7n1VM5Tg1i428SV-46" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1" source="gzPxU7n1VM5Tg1i428SV-24" target="gzPxU7n1VM5Tg1i428SV-41">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="300" y="420" as="sourcePoint" />
+            <mxPoint x="350" y="370" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
