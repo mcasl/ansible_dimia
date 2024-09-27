@@ -181,13 +181,27 @@
             <mxPoint x="350" y="370" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="gzPxU7n1VM5Tg1i428SV-41" value="&amp;nbsp; &amp;gt; books&lt;div&gt;&amp;nbsp; &amp;gt; files&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;gt; scripts&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;gt; tasks&lt;/div&gt;&lt;div&gt;&amp;nbsp; hosts&lt;/div&gt;" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;align=left;" vertex="1" parent="1">
-          <mxGeometry x="330" y="190" width="110" height="100" as="geometry" />
+        <mxCell id="gzPxU7n1VM5Tg1i428SV-41" value="&lt;font face=&quot;Courier New&quot;&gt;&lt;b&gt;&amp;nbsp; &amp;gt; books&lt;/b&gt;&lt;/font&gt;&lt;div&gt;&lt;font face=&quot;Courier New&quot;&gt;&lt;b&gt;&amp;nbsp; &amp;gt; files&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font face=&quot;Courier New&quot;&gt;&lt;b&gt;&amp;nbsp; &amp;gt; scripts&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font face=&quot;Courier New&quot;&gt;&lt;b&gt;&amp;nbsp; &amp;gt; tasks&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font face=&quot;Courier New&quot;&gt;&lt;b&gt;&amp;nbsp; hosts&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font face=&quot;Courier New&quot;&gt;&lt;b&gt;&amp;nbsp; local.yml&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="330" y="190" width="110" height="130" as="geometry" />
         </mxCell>
         <mxCell id="gzPxU7n1VM5Tg1i428SV-46" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1" source="gzPxU7n1VM5Tg1i428SV-24" target="gzPxU7n1VM5Tg1i428SV-41">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="300" y="420" as="sourcePoint" />
             <mxPoint x="350" y="370" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gzPxU7n1VM5Tg1i428SV-47" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1" source="gzPxU7n1VM5Tg1i428SV-24" target="gzPxU7n1VM5Tg1i428SV-4">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="480" y="380" as="sourcePoint" />
+            <mxPoint x="530" y="330" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="240" y="95" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gzPxU7n1VM5Tg1i428SV-50" value="&lt;font face=&quot;Courier New&quot; style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;crontab -&amp;gt; ansible-pull -o -U &amp;lt;repo&amp;gt; local.yml&lt;/b&gt;&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="gzPxU7n1VM5Tg1i428SV-47">
+          <mxGeometry x="-0.0078" y="2" relative="1" as="geometry">
+            <mxPoint x="65" y="-13" as="offset" />
           </mxGeometry>
         </mxCell>
       </root>
