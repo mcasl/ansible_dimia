@@ -1,5 +1,6 @@
 # Administración máquinas laboratorios F5/F6/G7/E5 - Ansible
 
+![Diagrama del sistema](./images/system_diagram.png)
 
 ## Descripción del sistema
 
