@@ -1,0 +1,9 @@
+- name: Copy PreSession template
+  ansible.builtin.template:
+    src: files/PreSession_default.j2  # Path to the template file
+    dest: "/etc/gdm3/PreSession/Default"  # Destination path for the generated  file
+
+- name: Copy PostSession template
+  ansible.builtin.template:
+    src: files/PostSession_default.j2  # Path to the template file
+    dest: "/etc/gdm3/PostSession/Default"  # Destination path for the generated  file
