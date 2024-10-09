@@ -17,6 +17,7 @@
     - include_tasks: tasks/cron_job_ansible_pull.yml
     - include_tasks: tasks/paquetes.yml
     - include_tasks: tasks/anaconda.yml
+    - include_tasks: tasks/erase_user_practicas_files.yml
     - include_tasks: tasks/practicas_rustup.yml
     - include_tasks: tasks/root_rustup.yml
     - include_tasks: tasks/paquetes_cargo.yml
