@@ -30,3 +30,6 @@
       - outguess
       - ansible
       - ant
+      - gcc
+      - git
+      
